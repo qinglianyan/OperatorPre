@@ -214,8 +214,8 @@ int main(int argc, char* argv[]){
 	fgets(input, MAX,file);
 //	printf("%s\n", input);
 //	printf("input's length is %d byte.\n", strlen(input));
-	input[strlen(input)+1]='\0';
-	input[strlen(input)]='#';
+	input[strlen(input)]='\0';
+	input[strlen(input)-1]='#';
 //	printf("%s\n", input);
 //	printf("input's length is %d byte.\n", strlen(input));
 	Tinput=0;
