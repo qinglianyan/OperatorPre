@@ -108,6 +108,10 @@ char popsym(){
 	return tmp;
 }
 int de_compare(){
+	if(find(input[Tinput])==-1){
+		printf("E\n");
+		exit(0);
+	}
 	return matrix[find(first_sym())][find(input[Tinput])];
 }
 void plus_statute(){
@@ -235,7 +239,7 @@ int main(int argc, char* argv[]){
 //			printf("Accept!");
 			break;
 		}
-	if(de_compare()==-2){
+		if(de_compare()==-2){
 //			printf("error:E\n");
 			printf("E\n");
 			break;
