@@ -211,11 +211,18 @@ int main(int argc, char* argv[]){
 		printf("open error!\n");
 		return 0;
 	}
-	fgets(input, MAX,file);
+//	fgets(input, MAX,file);
+	while((ch=fgetc(file))!=EOF){
+		if(ch=='\r'||ch=='\n'){
+			break;
+		}
+		input[++Tinput]=ch;
+	}
+	input[++Tinput]='\0';
 //	printf("%s\n", input);
 //	printf("input's length is %d byte.\n", strlen(input));
-	input[strlen(input)]='\0';
-	input[strlen(input)-1]='#';
+	input[strlen(input)+1]='\0';
+	input[strlen(input)]='#';
 //	printf("%s\n", input);
 //	printf("input's length is %d byte.\n", strlen(input));
 	Tinput=0;
